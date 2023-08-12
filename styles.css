@@ -1,0 +1,182 @@
+/* Reset styles */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: x-large;
+}
+
+/* Common styles for both light and dark modes */
+body {
+  background-color: #f0f0f0;
+  transition: background-color 200ms ease;
+}
+
+h1 {
+  text-align: center;
+}
+
+.calculator-container {
+  /* Design */
+  background-color: #ffff;
+  border: none;
+  border-radius: 50px;
+  box-shadow: 0px 0px 3px 0px;
+  /* Positioning */
+  width: 350px;
+  margin: 0 auto;
+  margin-top: 50px;
+  padding: 20px;
+  scale: 0.8;
+}
+
+#notch {
+  width: 30px;
+  height: 15px;
+  border-radius: 10px;
+  border: 3px solid #4cb343;
+  background-color: #43fd32;
+  transition: width 200ms ease, height 200ms ease;
+  position: relative;
+}
+
+#notch p {
+  display: none;
+  font-size: 70%;
+  font-weight: 600;
+  text-align: right;
+  padding-right: 10px;
+  position: absolute;
+  right: -5px;
+  user-select: none;
+}
+
+#notch:hover {
+  width: 100%;
+  height: 30px;
+  transition: width 200ms ease, height 200ms ease;
+}
+
+#notch:hover p {
+  display: block;
+  animation: fadeText 1s ease;
+}
+
+@keyframes fadeText {
+  0% {
+    opacity: 0%;
+  }
+  25% {
+    opacity: 25%;
+  }
+  75% {
+    opacity: 75%;
+  }
+  100% {
+    opacity: 100%;
+  }
+}
+
+.display {
+  /* Design */
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0px 0px 5px 0px inset;
+  background-color: #cccccc;
+  /* Positioning and Sizing */
+  width: 100%;
+  height: 100px;
+  margin-top: 10px;
+  padding: 10px;
+  text-align: right;
+  overflow: auto;
+}
+
+#output {
+  font-size: 50px;
+  font-weight: 600;
+}
+
+#queue-display {
+  margin-left: 20px;
+}
+
+.num-op {
+  /* Numbers and Operations */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: left;
+  padding-top: 10px;
+}
+
+button {
+  border-radius: 20px;
+  border: 3px solid #5c5c5c;
+  background-color: #e9e9ed;
+  width: 73px;
+  height: 73px;
+  margin: 2px;
+  transition: background-color 200ms ease;
+}
+
+button:hover {
+  cursor: pointer;
+  background-color: #cecece;
+}
+
+#equal {
+  width: 152px;
+}
+
+/* Dark mode */
+body.dark-mode {
+  background-color: #303030;
+  color: #ffffff;
+  transition: background-color 200ms ease;
+}
+
+body.dark-mode .calculator-container {
+  background-color: #1d1d1d;
+  box-shadow: 0px 0px 5px 0px rgba(138, 138, 138, 0.3);
+}
+
+body.dark-mode #notch {
+  border: 3px solid #4cb343;
+  background-color: #43fd32;
+  color: #000000;
+}
+
+body.dark-mode .display {
+  background-color: #424242;
+  color: #ffffff;
+  box-shadow: 0px 0px 5px 0px rgb(107, 107, 107) inset;
+}
+
+body.dark-mode button {
+  background-color: #333333;
+  border-color: #bbbbbb;
+  color: #ffffff;
+}
+
+body.dark-mode button:hover {
+  background-color: #474747;
+}
+
+/* Add a fade-in animation */
+.animate {
+  animation: fadeIn 0.3s ease-out;
+  animation-fill-mode: forwards;
+  overflow: hidden;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(2px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
